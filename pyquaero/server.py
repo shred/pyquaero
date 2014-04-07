@@ -85,7 +85,7 @@ class PyquaeroHandler(BaseHTTPRequestHandler):
             result = self.server.invoke(self.path)
             result = to_json(result).encode('utf-8')
         except Exception as ex:
-            self.send_response(500, 'Error: ' + ex)
+            self.send_response(500, 'Error: ' + str(ex))
             self.end_headers()
             return
 
@@ -115,7 +115,7 @@ class PyquaeroHandler(BaseHTTPRequestHandler):
             result = self.server.invoke(self.path, data)
             result = to_json(result).encode('utf-8')
         except Exception as ex:
-            self.send_response(500, 'Error: ' + ex)
+            self.send_response(500, 'Error: ' + str(ex))
             self.end_headers()
             return
 
