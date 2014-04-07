@@ -41,8 +41,8 @@ class AquaDevice(object):
 
         # claim the interfaces if held by the kernel
         for intf in self.interface:
-            if dev.is_kernel_driver_active(intf):
-                self.dev.detach_kernel_driver(intf)
+            if dev.is_kernel_driver_active(intf.bInterfaceNumber):
+                self.dev.detach_kernel_driver(intf.bInterfaceNumber)
                 usb.util.claim_interface(self.dev, intf)
 
     def close(self):
@@ -52,7 +52,7 @@ class AquaDevice(object):
         """
         for intf in self.interface:
             usb.util.release_interface(self.dev, intf)
-            self.dev.attach_kernel_driver(intf)
+            self.dev.attach_kernel_driver(intf.bInterfaceNumber)
 
     def send_report(self, reportId, data, wIndex=2):
         """Send a USBHID OUT report request to the AquaDevice."""
