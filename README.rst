@@ -16,9 +16,9 @@ As there is no official documentation, pyquaero is highly experimental and based
 
 Using pyquaero could lead to failure of cooling fans and aqua pumps, and thus may cause permanent damage to heat sensitive components (like CPUs).
 
-Neither the pyquaero developers nor Aqua Computer are responsible for any damage caused by this software. If you don't know what you are doing, use the official software only! Again: pyquaero is highly experimental.
+Neither the pyquaero developers nor Aqua Computer are responsible for any damage caused by this software. We strongly recommend to use the official software only! Again: pyquaero is highly experimental.
 
-pyquaero is a community open source project and not endorsed by or affiliated with Aqua Computer.
+pyquaero is a community open source project and is not endorsed by or affiliated with Aqua Computer.
 
 WARNUNG
 -------
@@ -31,12 +31,14 @@ Da es keine offizielle Dokumentation gibt, basiert pyquaero auf reverse engineer
 
 Durch pyquaero können Lüfter und Wasserpumpen ausfallen, wodurch hitzeempfindliche Komponenten (z. B. CPUs) dauerhaft beschädigt werden können.
 
-Weder die pyquaero-Entwickler noch Aqua Computer sind für jegliche Schäden verantwortlich, die durch den Einsatz dieser Software entstehen. Wenn du nicht weißt, worauf du dich einlässt, verwende ausschließlich die offizielle Software! Noch einmal: pyquaero ist hochexperimentell.
+Weder die pyquaero-Entwickler noch Aqua Computer sind für jegliche Schäden verantwortlich, die durch den Einsatz dieser Software entstehen. Wir empfehlen ausdrücklich nur den Einsatz der offiziellen Software! Noch einmal: pyquaero ist hochexperimentell.
 
 pyquaero ist ein freies Open Source-Projekt und steht in keinem Bezug zu Aqua Computer.
 
 USB Setup
 ---------
+
+It is not recommended to use Pyquaero or ``pyqd.py`` with root rights.
 
 Execute this sequence to set up an "aquaero" group, change the Aquaero USB permissions and add the user ``$user`` to this group::
 
@@ -45,6 +47,8 @@ Execute this sequence to set up an "aquaero" group, change the Aquaero USB permi
     __EOF__
     groupadd -r aquaero
     usermod -aG aquaero $user
+
+The ``$user`` is now able to access the Aquaero USB device.
 
 Usage
 -----
@@ -66,7 +70,7 @@ Pyquaero provides a HTTP web service that communicates via simple commands and J
 
 ``pyqd.py --help`` shows its usage.
 
-If you just start ``pyqd.py``, it connects to the first Aquaero device found, and listens to port 9500 for HTTP requests by default. It also takes care of keeping the Aquaero real time clock up to date.
+If you just start ``pyqd.py``, it connects to the first Aquaero device found, and listens on port 9500 for HTTP requests by default. It also takes care of keeping the Aquaero real time clock up to date.
 
 These commands are currently implemented:
 
@@ -95,7 +99,7 @@ Development
 
 The project is hosted at `GitHub <https://github.com/shred/pyquaero>`_
 
-Pyquaero is developed in Python 3. It is my first Python project, so please be patient if things are not very Pythonesque yet. Your feedback and patches are very welcome.
+Pyquaero is developed in Python 3. It is my first Python project, so please be patient if things are not very pythonesque yet. Your feedback and patches are very welcome.
 
 Pyquaero is currently in alpha state. The API and the web services may undergo major changes without prior notice.
 
