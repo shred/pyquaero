@@ -21,6 +21,7 @@
 from array import array
 from datetime import datetime
 import struct
+import random
 
 
 class Backend:
@@ -79,11 +80,14 @@ class Backend:
         """Read a fragment from flash memory."""
         page_size = 0x0400
         data_size = page_size + 10 + 4
+        rand_id = random.randrange(0, 0x10000)
 
         query = array('B')
         query.extend(struct.pack('>BBII', 0x09, 0x01, start, length))
         query.extend([0x00] * page_size)
-        query.extend(struct.pack('>HH', 0xae8a, 0x0000))
+        query.extend(struct.pack('>HH', rand_id, 0x0000))
+
+        rand_id += 1
 
         with self.lock:
             self.device.send_report(9, query)
@@ -95,8 +99,13 @@ class Backend:
                     self._cache_status(data)
                     continue
 
-                # TODO: test position, counter and checksum
+                # check if this is the data package we expected
+                pkg_count = struct.unpack('>H', data[-4:-2])[0]
+                if pkg_count != rand_id:
+                    continue
+
                 result.extend(data[10:-4])
+                rand_id += 1
 
         return result
 
