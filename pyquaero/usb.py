@@ -79,12 +79,12 @@ class AquaDevice(object):
 
 def count_devices():
     """Count the number of Aquaero devices found."""
-    devices = usb.core.find(idVendor=VENDOR_ID, idProduct=PRODUCT_ID, find_all=True)
+    devices = list(usb.core.find(idVendor=VENDOR_ID, idProduct=PRODUCT_ID, find_all=True))
     return len(devices)
 
 def get_device(unit=0):
     """Return an AquaDevice instance for the given Aquaero device unit found."""
-    devices = usb.core.find(idVendor=VENDOR_ID, idProduct=PRODUCT_ID, find_all=True)
+    devices = list(usb.core.find(idVendor=VENDOR_ID, idProduct=PRODUCT_ID, find_all=True))
     if unit >= len(devices):
         raise IndexError('No Aquaero unit %d found' % unit)
     return AquaDevice(devices[unit])
