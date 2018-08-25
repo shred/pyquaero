@@ -1,0 +1,18 @@
+site_name: pyquaero
+site_author: Richard Körber
+site_url: https://shredzone.org/docs/pyquaero/index.html
+theme:
+    name: material
+    font: false
+    logo:
+        icon: 'waves'
+    palette:
+        primary: 'blue'
+        accent: 'deep orange'
+markdown_extensions:
+  - admonition
+nav:
+  - 'index.md'
+  - 'library.md'
+  - 'tools.md'
+  - 'raspberry.md'
