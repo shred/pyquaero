@@ -25,11 +25,11 @@ import argparse
 
 import pyquaero.core
 
+def main():
+    parser = argparse.ArgumentParser(description='Set the clock of an Aquaero device')
+    parser.add_argument('-u', '--unit', default=0, type=int, help='Aquaero unit number')
+    args = parser.parse_args()
 
-parser = argparse.ArgumentParser(description='Set the clock of an Aquaero device')
-parser.add_argument('-u', '--unit', default=0, type=int, help='Aquaero unit number')
-args = parser.parse_args()
-
-with pyquaero.core.Aquaero(args.unit) as aq:
-    print('Setting clock of Aquaero unit %d' % args.unit)
-    aq.set_time()
+    with pyquaero.core.Aquaero(args.unit) as aq:
+        print('Setting clock of Aquaero unit %d' % args.unit)
+        aq.set_time()

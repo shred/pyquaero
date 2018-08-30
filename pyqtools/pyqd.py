@@ -25,18 +25,18 @@ import argparse
 
 from pyquaero.server import PyquaeroServer
 
+def main():
+    parser = argparse.ArgumentParser(description='Run the Pyquaero HTTP web service')
+    parser.add_argument('-u', '--unit', default=0, type=int, help='Aquaero unit number')
+    parser.add_argument('-p', '--port', default=9500, type=int, help='HTTP port the server is listening at')
+    parser.add_argument('-H', '--host', default='', help='HTTP host the server is bound to')
+    parser.add_argument('-T', '--notime', default=False, type=bool, help='Disable frequent Aquaero clock updates')
+    args = parser.parse_args()
 
-parser = argparse.ArgumentParser(description='Run the Pyquaero HTTP web service')
-parser.add_argument('-u', '--unit', default=0, type=int, help='Aquaero unit number')
-parser.add_argument('-p', '--port', default=9500, type=int, help='HTTP port the server is listening at')
-parser.add_argument('-H', '--host', default='', help='HTTP host the server is bound to')
-parser.add_argument('-T', '--notime', default=False, type=bool, help='Disable frequent Aquaero clock updates')
-args = parser.parse_args()
-
-httpd = PyquaeroServer((args.host, args.port), args.unit, updatetime=not args.notime)
-try:
-    print('Now listening on port %d' % args.port)
-    httpd.serve_forever()
-except KeyboardInterrupt:
-    pass
-httpd.server_close()
+    httpd = PyquaeroServer((args.host, args.port), args.unit, updatetime=not args.notime)
+    try:
+        print('Now listening on port %d' % args.port)
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    httpd.server_close()

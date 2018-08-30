@@ -26,7 +26,7 @@ def readme():
 
 setup(
     name='pyquaero',
-    version='1.0.0',
+    version='1.0.1',
     description='Library and server for Aquaero cooler controllers',
     long_description=readme(),
     long_description_content_type='text/markdown',
