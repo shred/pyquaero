@@ -1,20 +1,22 @@
 # pyquaero
 
-This is a Python library and web service for accessing [Aquaero](https://aquacomputer.de/aquaero-5.html) fan controllers by Aqua Computer GmbH & Co. KG.
+This is a Python library and web service for accessing [Aquaero](https://aquacomputer.de/aquaero-5.html) fan and pump controllers by Aqua Computer GmbH & Co. KG.
 
 _pyquaero_ is a community open source project. It is not endorsed by or affiliated with Aqua Computer.
 
-**NOTE:** At the moment, _pyquaero_ only supports Aquaero 5 and 6 with the now outdated **firmware version 1036**.
+**NOTE:** At the moment, _pyquaero_ only supports Aquaero with the now outdated **firmware version 1036**.
 
 ## USE THIS SOFTWARE AT YOUR OWN RISK!
 
 The _pyquaero_ main developer is running this software for several years now, without any negative side effects. However, it is a highly experimental software, and it is based on reverse engineering only.
 
 * This software might damage your Aquaero device in a way that it must be repaired or replaced.
-* The use of this software could lead to failure of cooling fans or aqua pumps, which might cause permanent damage to heat sensitive components of your computer.
+* The use of this software could lead to failure of cooling fans or aqua pumps, which might cause permanent damage to heat sensitive components of your system.
 * Using this software might void your warranty.
 
-Neither the _pyquaero_ developers nor Aqua Computer can be held liable for any damage caused by this software. We strongly recommend to use only the official software!
+Neither the _pyquaero_ developers nor Aqua Computer GmbH & Co. KG can be held liable for any damage caused by this software.
+
+It is strongly recommended to use only the official software!
 
 ## Installation
 
@@ -35,5 +37,6 @@ _pyquaero_ is open source software. The source code is distributed under the ter
 
 ## Acknowledgements
 
+* [Aqua Computer GmbH & Co. KG](https://www.aquacomputer.de) for donating an Aquaero LT for development purposes.
 * JinTu for [aerotools-ng](https://github.com/JinTu/aerotools-ng). Without his work, pyquaero would not exist.
 * The members of the [Aqua Computer Forum](https://forum.aquacomputer.de) for helping, reverse engineering and feedback.

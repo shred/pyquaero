@@ -1,20 +1,22 @@
 # Setup
 
-This is a Python library and web service for accessing [Aquaero](https://aquacomputer.de/aquaero-5.html) fan controllers by Aqua Computer GmbH & Co. KG.
+This is a Python library and web service for accessing [Aquaero](https://aquacomputer.de/aquaero-5.html) fan and pump controllers by Aqua Computer GmbH & Co. KG.
 
 _pyquaero_ is a community open source project. It is not endorsed by or affiliated with Aqua Computer.
 
-**NOTE:** At the moment, _pyquaero_ only supports Aquaero 5 and 6 with the now outdated **firmware version 1036**. Later firmware versions may work, but are untested.
+**NOTE:** At the moment, _pyquaero_ only supports Aquaero with the now outdated **firmware version 1036**.
 
 !!! attention "EXPERIMENTAL SOFTWARE! USE AT YOUR OWN RISK!"
 
     The _pyquaero_ main developer is running this software for several years now, without any negative side effects. However, it is a highly experimental software, and it is based on reverse engineering only.
 
     * This software might damage your Aquaero device in a way that it must be repaired or replaced.
-    * The use of this software could lead to failure of cooling fans or aqua pumps, which might cause permanent damage to heat sensitive components of your computer.
+    * The use of this software could lead to failure of cooling fans or aqua pumps, which might cause permanent damage to heat sensitive components of your system.
     * Using this software might void your warranty.
 
-    Neither the _pyquaero_ developers nor Aqua Computer can be held liable for any damage caused by this software. We strongly recommend to use only the official software!
+    Neither the _pyquaero_ developers nor Aqua Computer GmbH & Co. KG can be held liable for any damage caused by this software.
+
+    It is strongly recommended to use only the official software!
 
 ## Installation
 
@@ -40,15 +42,15 @@ usermod -aG aquaero $user
 
 The `$user` is now allowed to access the Aquaero USB device.
 
-## Later Firmwares
+## Support of the latest Firmware
 
-_pyquaero_ only supports the now outdated firmware version 1036.
+[Aqua Computer GmbH & Co. KG](https://www.aquacomputer.de) has donated an Aquaero LT for development purposes to this project. It allows me to reverse engineer the latest Aquaero firmware, and eventually support it in _pyquaero_.
 
-The reason is that I, as the developer of _pyquaero_, only own a single Aquaero, which is actually in use.
+Although this is good news, there are some caveats:
 
-As there is no official documentation, _pyquaero_ bases on reverse engineering of the data transferred via USB. Updating the firmware of my Aquaero could mean that _pyquaero_ stops working, and I could be unable to make it work again. As I need my Aquaero, I cannot afford to risk that. For that reason, _pyquaero_ is stuck to firmware version 1036.
-
-If you need support of the latest firmware, I would be happy about a donation so I can buy a second Aquaero for experiments only. However I cannot guarantee that there will be a release that supports the latest firmware, if technical reasons prevent it.
+* It may take a while until the latest firmware is supported by _pyquaero_. If you rely on a working _pyquaero_, do not update the firmware of your Aquaero until it is supported.
+* There is no guarantee that a firmware version will be supported by _pyquaero_. It still bases on reverse engineering, which may turn out to be impossible.
+* Even though Aqua Computer donated an Aquaero device to this project, it does not mean that they officially support or endorse it. You are still using _pyquaero_ at your own risk, as stated in the warning above!
 
 ## Open Source
 
