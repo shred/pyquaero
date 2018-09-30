@@ -799,11 +799,20 @@ class AquaSerializer1036(AquaSerializer):
         'D5 pump 1', 'D5 pump 2', 'D5 pump 3', 'D5 pump 4',
     )
 
+    def read_status(self, backend):
+        return backend.read_status(709, max_age=0.5)
+
     def unpack_status(self, data):
         return AquaSerializer1036.status_scheme.get(data)
 
+    def read_settings(self, backend):
+        return backend.read_settings(2428)
+
     def unpack_settings(self, data):
         return AquaSerializer1036.settings_scheme.get(data)
+
+    def read_strings(self, backend):
+        return backend.read_strings(0x0009c000)
 
     def unpack_strings(self, data):
         result = []
@@ -811,4 +820,3 @@ class AquaSerializer1036(AquaSerializer):
             result.append(data[0:22].tobytes().decode('iso-8859-15').rstrip('\x00'))
             data = data[22:]
         return dict(zip(self.string_keys, result))
-

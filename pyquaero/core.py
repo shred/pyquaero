@@ -56,16 +56,15 @@ class Aquaero:
 
     def get_status(self):
         """Get the current status of the Aquaero device."""
-        status = self.backend.read_status(max_age=0.5)
+        status = self.serializer.read_status(self.backend)
         return self.serializer.unpack_status(status)
 
     def get_settings(self):
         """Get the current settings."""
-        settings = self.backend.read_settings()
+        settings = self.serializer.read_settings(self.backend)
         return self.serializer.unpack_settings(settings)
 
     def get_strings(self):
         """Get the strings currently set."""
-        strings = self.backend.read_strings()
+        strings = self.serializer.read_strings(self.backend)
         return self.serializer.unpack_strings(strings)
-

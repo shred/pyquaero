@@ -50,7 +50,7 @@ class Backend:
         with self.lock:
             self.device.send_report(6, struct.pack('>BBBI', 0x06, 0x90, 0x88, seconds))
 
-    def read_status(self, max_age=0.0):
+    def read_status(self, length, max_age=0.0):
         """Read the current status.
 
         The last status is cached. If it is younger than max_age (in seconds), the cached
@@ -59,7 +59,7 @@ class Backend:
         with self.lock:
             if (self.last_status_ts is None
                 or (datetime.now() - self.last_status_ts).total_seconds() >= max_age):
-                self._cache_status(self.device.read_endpoint(709, endpoint=3))
+                self._cache_status(self.device.read_endpoint(length, endpoint=3))
             return self.last_status
 
     def _cache_status(self, status):
@@ -67,14 +67,14 @@ class Backend:
         self.last_status = status
         self.last_status_ts = datetime.now()
 
-    def read_settings(self):
+    def read_settings(self, length):
         """Read the current settings."""
         with self.lock:
-            return self.device.receive_report(11, 2428)
+            return self.device.receive_report(11, length)
 
-    def read_strings(self):
+    def read_strings(self, address):
         """Read the current set of strings."""
-        return self.read_memory(0x0009c000, 0x1000)
+        return self.read_memory(address, 0x1000)
 
     def read_memory(self, start, length):
         """Read a fragment from flash memory."""
@@ -116,4 +116,3 @@ class Backend:
             status = self.device.read_endpoint(1024, endpoint=3)
         scheme = Group(scheme={'firmware_version': UnsignedWord(at=0x000b)})
         return scheme.get(status)['firmware_version']
-
