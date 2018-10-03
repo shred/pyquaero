@@ -518,13 +518,13 @@ class AquaSerializer1036(AquaSerializer):
                  'offset':              Percent(at=0x00fc, step=2),
                                     }),
             'fan_vrm':              Array(items=12, scheme={
-                 'temp':                Percent(at=0x0134, step=2),
+                 'offset':              Percent(at=0x0134, step=2),
                                     }),
             'cpu':                  Array(items=8, scheme={
-                 'temp':                Percent(at=0x014c, step=2),
+                 'offset':              Percent(at=0x014c, step=2),
                                     }),
             'other':                Array(items=16, scheme={
-                 'temp':                Percent(at=0x0114, step=2),
+                 'offset':              Percent(at=0x0114, step=2),
                                     }),
                                 }),
         'virtual_sensors':      Array(items=4, scheme={
