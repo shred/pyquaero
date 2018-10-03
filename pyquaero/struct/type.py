@@ -49,13 +49,25 @@ class SignedByte(AquaType):
 
 class UnsignedWord(AquaType):
     """An unsigned word (16 bits)."""
+    undefined = 0xffff
+    def __init__(self, at, step=0, optional=False):
+        AquaType.__init__(self, at, step)
+        self.optional = optional
+
     def fetch(self, data, pos):
-        return struct.unpack('>H', data[pos : pos + 2])[0]
+        val = struct.unpack('>H', data[pos : pos + 2])[0]
+        return val if not self.optional or val != UnsignedWord.undefined else None
 
 class SignedWord(AquaType):
     """A signed word (16 bits)."""
+    undefined = 0x7fff
+    def __init__(self, at, step=0, optional=False):
+        AquaType.__init__(self, at, step)
+        self.optional = optional
+
     def fetch(self, data, pos):
-        return struct.unpack('>h', data[pos : pos + 2])[0]
+        val = struct.unpack('>h', data[pos : pos + 2])[0]
+        return val if not self.optional or val != SignedWord.undefined else None
 
 class UnsignedLong(AquaType):
     """An unsigned long (32 bits)."""
@@ -139,7 +151,7 @@ class CurveTemperatures(AquaType):
 
     def fetch(self, data, pos):
         data = struct.unpack('>%dh' % self.items, data[pos : pos + (self.items * 2)])
-        mapper = lambda val: val / 100.0 if val < Temperature.undefined else None
+        mapper = lambda val: val / 100.0 if val < CurveTemperatures.undefined else None
         data = list(map(mapper, data))
         return data
 
@@ -194,4 +206,3 @@ class Array:
             for key, converter in self.scheme.items():
                 result[ix][key] = converter.get(data, index=ix)
         return result
-
