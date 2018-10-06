@@ -4,7 +4,7 @@ This is a Python library and web service for accessing [Aquaero](https://aquacom
 
 _pyquaero_ is a community open source project. It is not endorsed by or affiliated with Aqua Computer.
 
-**NOTE:** At the moment, _pyquaero_ only supports Aquaero with the now outdated **firmware version 1036**.
+_pyquaero_ supports Aquaero devices with **firmware version 2100 or 1036**. Other firmware versions may work as well, after some tweaking.
 
 ## USE THIS SOFTWARE AT YOUR OWN RISK!
 

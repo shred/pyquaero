@@ -4,8 +4,6 @@ This is a Python library and web service for accessing [Aquaero](https://aquacom
 
 _pyquaero_ is a community open source project. It is not endorsed by or affiliated with Aqua Computer.
 
-**NOTE:** At the moment, _pyquaero_ only supports Aquaero with the now outdated **firmware version 1036**.
-
 !!! attention "EXPERIMENTAL SOFTWARE! USE AT YOUR OWN RISK!"
 
     The _pyquaero_ main developer is running this software for several years now, without any negative side effects. However, it is a highly experimental software, and it is based on reverse engineering only.
@@ -17,6 +15,13 @@ _pyquaero_ is a community open source project. It is not endorsed by or affiliat
     Neither the _pyquaero_ developers nor Aqua Computer GmbH & Co. KG can be held liable for any damage caused by this software.
 
     It is strongly recommended to use only the official software!
+
+## Supported Firmware Versions
+
+* 2100: Current status can be read almost fully. Settings are incomplete and won't decode data source and page type. Customizable strings are complete. Internal clock can be set.
+* 1036: Current status and settings can be read almost fully. Customizable strings are complete. Internal clock can be set.
+
+Other firmware versions may work as well, but require some tweaking at the source code. If you was able to add support for other firmware versions, please send in a pull request!
 
 ## Installation
 
