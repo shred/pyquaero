@@ -67,6 +67,7 @@ setup(
         'console_scripts': [
             'pyqd=pyqtools.pyqd:main',
             'pyqsettime=pyqtools.pyqsettime:main',
+            'pyqmdump=pyqtools.pyqmdump:main',
         ],
     },
 )
