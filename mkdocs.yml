@@ -9,10 +9,13 @@ theme:
     palette:
         primary: 'blue'
         accent: 'deep orange'
+extra_css:
+  - css/firmware.css
 markdown_extensions:
   - admonition
 nav:
   - 'index.md'
+  - 'firmware.md'
   - 'library.md'
   - 'tools.md'
   - 'raspberry.md'

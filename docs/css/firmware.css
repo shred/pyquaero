@@ -1,0 +1,23 @@
+
+.firmware .md-typeset__table {
+  display: block;
+}
+
+.firmware td {
+  text-align: center !important;
+}
+
+.fw-ok {
+  padding: 0.3rem;
+  background-color: #8F8;
+}
+
+.fw-part {
+  padding: 0.3rem;
+  background-color: #FF8;
+}
+
+.fw-no {
+  padding: 0.3rem;
+  background-color: #F88;
+}

@@ -18,10 +18,7 @@ _pyquaero_ is a community open source project. It is not endorsed by or affiliat
 
 ## Supported Firmware Versions
 
-* 2100: Current status can be read almost fully. Settings are incomplete and won't decode data source and page type. Customizable strings are complete. Internal clock can be set.
-* 1036: Current status and settings can be read almost fully. Customizable strings are complete. Internal clock can be set.
-
-Other firmware versions may work as well, but require some tweaking at the source code. If you was able to add support for other firmware versions, please send in a pull request!
+Before you install _pyquaero_, [check here](firmware) if your Aquaero firmware is supported.
 
 ## Installation
 
@@ -46,16 +43,6 @@ usermod -aG aquaero $user
 ```
 
 The `$user` is now allowed to access the Aquaero USB device.
-
-## Support of the latest Firmware
-
-[Aqua Computer GmbH & Co. KG](https://www.aquacomputer.de) has donated an Aquaero LT for development purposes to this project. It allows me to reverse engineer the latest Aquaero firmware, and eventually support it in _pyquaero_.
-
-Although this is good news, there are some caveats:
-
-* It may take a while until the latest firmware is supported by _pyquaero_. If you rely on a working _pyquaero_, do not update the firmware of your Aquaero until it is supported.
-* There is no guarantee that a firmware version will be supported by _pyquaero_. It still bases on reverse engineering, which may turn out to be impossible.
-* Even though Aqua Computer donated an Aquaero device to this project, it does not mean that they officially support or endorse it. You are still using _pyquaero_ at your own risk, as stated in the warning above!
 
 ## Open Source
 

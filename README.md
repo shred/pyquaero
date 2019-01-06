@@ -4,8 +4,6 @@ This is a Python library and web service for accessing [Aquaero](https://aquacom
 
 _pyquaero_ is a community open source project. It is not endorsed by or affiliated with Aqua Computer.
 
-_pyquaero_ supports Aquaero devices with **firmware version 2100 or 1036**. Other firmware versions may work as well, after some tweaking.
-
 ## USE THIS SOFTWARE AT YOUR OWN RISK!
 
 The _pyquaero_ main developer is running this software for several years now, without any negative side effects. However, it is a highly experimental software, and it is based on reverse engineering only.
@@ -18,11 +16,9 @@ Neither the _pyquaero_ developers nor Aqua Computer GmbH & Co. KG can be held li
 
 It is strongly recommended to use only the official software!
 
-## Installation
+## Usage
 
-```sh
-pip install pyquaero
-```
+At first, check if the [firmware version](https://shredzone.org/docs/pyquaero/firmware/) installed on your Aquaero is actually supported by _pyquaero_.
 
 See the [documentation](https://shredzone.org/docs/pyquaero/index.html) for how the library and tools are used.
 

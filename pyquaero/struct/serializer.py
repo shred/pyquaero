@@ -45,7 +45,7 @@ def create_serializer(firmware):
         from .fw1036 import AquaSerializer1036
         return AquaSerializer1036()
 
-    if firmware == 2100:
+    if 2100 <= firmware <= 2101:
         from .fw2100 import AquaSerializer2100
         return AquaSerializer2100()
 
