@@ -18,7 +18,7 @@ It is strongly recommended to use only the official software!
 
 ## Usage
 
-At first, check if the [firmware version](https://shredzone.org/docs/pyquaero/firmware/) installed on your Aquaero is actually supported by _pyquaero_.
+_pyquaero_ is only compatible to a limited number of Aquaero firmware versions. Please check first whether the [firmware version](https://shredzone.org/docs/pyquaero/firmware/) on your Aquaero is actually supported by _pyquaero_.
 
 See the [documentation](https://shredzone.org/docs/pyquaero/index.html) for how the library and tools are used.
 

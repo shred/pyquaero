@@ -346,11 +346,12 @@ class PageType(AquaType):
             return "?%d?" % val
 
 
-class AquaSerializer1036(AquaSerializer):
-    """An AquaSerializer for firmware version 1036."""
+class AquaSerializer1013(AquaSerializer):
+    """An AquaSerializer for structure version 1013."""
 
     status_scheme = Group(scheme={
         'time':                 Time(at=0x0001),
+        'structure_version':    UnsignedWord(at=0x0005),
         'serial_major':         UnsignedWord(at=0x0007),
         'serial_minor':         UnsignedWord(at=0x0009),
         'firmware_version':     UnsignedWord(at=0x000b),
@@ -803,13 +804,13 @@ class AquaSerializer1036(AquaSerializer):
         return backend.read_status(709, max_age=0.5)
 
     def unpack_status(self, data):
-        return AquaSerializer1036.status_scheme.get(data)
+        return AquaSerializer1013.status_scheme.get(data)
 
     def read_settings(self, backend):
         return backend.read_settings(2428)
 
     def unpack_settings(self, data):
-        return AquaSerializer1036.settings_scheme.get(data)
+        return AquaSerializer1013.settings_scheme.get(data)
 
     def read_strings(self, backend):
         return backend.read_strings(0x0009c000)

@@ -39,17 +39,17 @@ class AquaSerializer:
         """Unpack a settings package."""
         raise NotImplementedError()
 
-def create_serializer(firmware):
-    """Create an AquaSerializer instance for the given firmware."""
-    if firmware == 1036:
-        from .fw1036 import AquaSerializer1036
-        return AquaSerializer1036()
+def create_serializer(structure, firmware):
+    """Create an AquaSerializer instance for the given structure and firmware version."""
+    if structure == 1013:
+        from .struct1013 import AquaSerializer1013
+        return AquaSerializer1013()
 
-    if 2100 <= firmware <= 2101:
-        from .fw2100 import AquaSerializer2100
-        return AquaSerializer2100()
+    if structure == 1200:
+        from .struct1200 import AquaSerializer1200
+        return AquaSerializer1200()
 
-    raise LookupError('firmware version %d is not supported' % firmware)
+    raise LookupError('firmware version %d (structure version %d) is not supported' % (firmware, structure))
 
 
 

@@ -116,3 +116,11 @@ class Backend:
             status = self.device.read_endpoint(1024, endpoint=3)
         scheme = Group(scheme={'firmware_version': UnsignedWord(at=0x000b)})
         return scheme.get(status)['firmware_version']
+
+    def get_structure(self):
+        """Get the structure version of the Aquaero at the given AquaDevice."""
+        from pyquaero.struct.type import Group, UnsignedWord
+        with self.lock:
+            status = self.device.read_endpoint(1024, endpoint=3)
+        scheme = Group(scheme={'structure_version': UnsignedWord(at=0x0005)})
+        return scheme.get(status)['structure_version']

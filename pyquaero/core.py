@@ -35,7 +35,8 @@ class Aquaero:
         from .struct.serializer import create_serializer
         self.backend = pyquaero.backend.Backend(unit)
         self.firmware = self.backend.get_firmware()
-        self.serializer = create_serializer(self.firmware)
+        self.structure = self.backend.get_structure()
+        self.serializer = create_serializer(self.structure, self.firmware)
 
     def __enter__(self):
         return self
