@@ -8,7 +8,8 @@ These are the Aquaero firmware versions currently supported by _pyquaero_:
 <table>
 <thead>
 <tr>
-  <th>Version (Structure)</th>
+  <th>Firmware Version</th>
+  <th>Structure Version</th>
   <th>Read Status</th>
   <th>Read Settings</th>
   <th>Change Settings</th>
@@ -19,7 +20,8 @@ These are the Aquaero firmware versions currently supported by _pyquaero_:
 </thead>
 <tbody>
 <tr>
-  <td>2101 (1200)</td>
+  <td>2101</td>
+  <td>1200</td>
   <td class="fw-yes">Yes</td>
   <td class="fw-part">Partial</td>
   <td class="fw-no">No</td>
@@ -28,7 +30,8 @@ These are the Aquaero firmware versions currently supported by _pyquaero_:
   <td class="fw-yes">Yes</td>
 </tr>
 <tr>
-  <td>2100 (1200)</td>
+  <td>2100</td>
+  <td>1200</td>
   <td class="fw-yes">Yes</td>
   <td class="fw-part">Partial</td>
   <td class="fw-no">No</td>
@@ -37,7 +40,8 @@ These are the Aquaero firmware versions currently supported by _pyquaero_:
   <td class="fw-yes">Yes</td>
 </tr>
 <tr>
-  <td>1036 (1013)</td>
+  <td>1036</td>
+  <td>1013</td>
   <td class="fw-yes">Yes</td>
   <td class="fw-yes">Yes</td>
   <td class="fw-no">No</td>
@@ -60,7 +64,7 @@ These are the Aquaero firmware versions currently supported by _pyquaero_:
 
 Your firmware version is not listed above?
 
-If the structure version (the number given in brackets) still matches, other firmware versions may be supported as well, but are then untested.
+If the structure version still matches, other firmware versions may be supported as well, but are then untested.
 
 If the structure version is unknown, _pyquaero_ refuses to connect to the Aquaero device. More or less extensive changes to the source code are then needed to make this firmware version work.
 

@@ -1,6 +1,6 @@
 
-.firmware .md-typeset__table {
-  display: block;
+.firmware table {
+  table-layout: fixed;
 }
 
 .firmware td {
