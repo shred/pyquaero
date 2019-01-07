@@ -20,36 +20,36 @@ These are the Aquaero firmware versions currently supported by _pyquaero_:
 <tbody>
 <tr>
   <td>2101 (1200)</td>
-  <td class="fw-ok">OK</td>
+  <td class="fw-yes">Yes</td>
   <td class="fw-part">Partial</td>
   <td class="fw-no">No</td>
-  <td class="fw-ok">OK</td>
+  <td class="fw-yes">Yes</td>
   <td class="fw-no">No</td>
-  <td class="fw-ok">OK</td>
+  <td class="fw-yes">Yes</td>
 </tr>
 <tr>
   <td>2100 (1200)</td>
-  <td class="fw-ok">OK</td>
+  <td class="fw-yes">Yes</td>
   <td class="fw-part">Partial</td>
   <td class="fw-no">No</td>
-  <td class="fw-ok">OK</td>
+  <td class="fw-yes">Yes</td>
   <td class="fw-no">No</td>
-  <td class="fw-ok">OK</td>
+  <td class="fw-yes">Yes</td>
 </tr>
 <tr>
   <td>1036 (1013)</td>
-  <td class="fw-ok">OK</td>
-  <td class="fw-ok">OK</td>
+  <td class="fw-yes">Yes</td>
+  <td class="fw-yes">Yes</td>
   <td class="fw-no">No</td>
-  <td class="fw-ok">OK</td>
+  <td class="fw-yes">Yes</td>
   <td class="fw-no">No</td>
-  <td class="fw-ok">OK</td>
+  <td class="fw-yes">Yes</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<span class="fw-ok">OK</span>: Feature is (almost) fully supported. Some rarely used parts may be missing, though.<br>
+<span class="fw-yes">Yes</span>: Feature is (almost) fully supported. Some rarely used parts may be missing, though.<br>
 <span class="fw-part">Partial</span>: Feature is essentially supported, but some important parts are still missing. <br>
 <span class="fw-no">No</span>: Feature is not supported at all.
 
