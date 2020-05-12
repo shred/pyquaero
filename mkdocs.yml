@@ -4,8 +4,8 @@ site_url: https://shredzone.org/docs/pyquaero/index.html
 theme:
     name: material
     font: false
-    logo:
-        icon: 'waves'
+    icon:
+        logo: 'material/waves'
     palette:
         primary: 'blue'
         accent: 'deep orange'

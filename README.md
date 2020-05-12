@@ -12,7 +12,7 @@ The _pyquaero_ main developer is running this software for several years now, wi
 * The use of this software could lead to failure of cooling fans or aqua pumps, which might cause permanent damage to heat sensitive components of your system.
 * Using this software might void your warranty.
 
-Neither the _pyquaero_ developers nor Aqua Computer GmbH & Co. KG can be held liable for any damage caused by this software.
+Neither the _pyquaero_ developers nor the manufacturer can be held liable for any damage caused by this software.
 
 It is strongly recommended to use only the official software!
 

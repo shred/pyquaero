@@ -11,4 +11,4 @@ _pyquaero_ is tested and runs on Raspberry Pi with either [Raspbian](https://www
 
 * I don't know about the state of _Rasperry Pi 2_. Your feedback is welcome.
 
-* The _Raspberry Pi 3_ has no USB issues. `pyqd` runs stable.
+* The _Raspberry Pi 3_ has no USB issues. `pyqd` is running stable.

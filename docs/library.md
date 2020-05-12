@@ -11,12 +11,12 @@ with pyquaero.core.Aquaero() as aq:
 
 `Aquaero` offers four methods:
 
-* `get_settings` - Read the current settings of the Aquaero.
-* `get_status` - Read the current status, e.g. fan speeds and temperatures.
-* `get_strings` - Read message strings.
+* `get_settings` - Read the current settings of the Aquaero, and return it as JSON structure.
+* `get_status` - Read the current status, e.g. fan speeds and temperatures, and return it as JSON structure.
+* `get_strings` - Read message strings, and return it as JSON dictionary.
 * `set_time` - Set the Aquaero time.
 
 !!! note
-    Currently it is only possible to read the state of the Aquaero device, and set the current time. It is not possible to change the settings.
+    Currently it is only possible to read the state of the Aquaero device, and to set the current time. It is not possible to change the settings.
 
 The other modules of this project contain low level access classes which are not very useful for other projects unless you want to use features of Aquaero that are not supported by this library.

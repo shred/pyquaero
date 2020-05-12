@@ -58,7 +58,7 @@ These are the Aquaero firmware versions currently supported by _pyquaero_:
 <span class="fw-no">No</span>: Feature is not supported at all.
 
 !!! important
-    Some existing features may disappear after a firmware update. If you require a special feature, make sure it is still available after the firmware has been updated, _before_ performing the update. It is **not** possible to downgrade to an older firmware version again, so do not update if in doubt.
+    After a firmware update, some features may not be available any more (see the table above). If you require a special feature, make sure it is still available after the firmware has been updated, _before_ performing the update. It is **not** possible to downgrade to an older firmware version again, so do not update if in doubt.
 
 ## Other Firmware Versions
 
@@ -72,7 +72,7 @@ If you was able to add support for another firmware or structure version, please
 
 ## Latest Firmware
 
-[Aqua Computer GmbH & Co. KG](https://www.aquacomputer.de) has donated an Aquaero LT for development purposes to this project. It allows me to reverse engineer the latest Aquaero firmware, and eventually support it in _pyquaero_.
+[Aqua Computer GmbH & Co. KG](https://www.aquacomputer.de) has kindly donated an Aquaero LT for development purposes to this project. It allows me to reverse engineer the latest Aquaero firmware, and eventually support it in _pyquaero_.
 
 Although this is good news, there are some caveats:
 
