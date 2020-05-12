@@ -8,29 +8,19 @@ These are the Aquaero firmware versions currently supported by _pyquaero_:
 <table>
 <thead>
 <tr>
-  <th>Firmware Version</th>
+  <th>Firmware Versions</th>
   <th>Structure Version</th>
   <th>Read Status</th>
   <th>Read Settings</th>
   <th>Change Settings</th>
   <th>Read Strings</th>
   <th>Change Strings</th>
-  <th>Set Time</th>
+  <th>Set<br />Time</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>2101</td>
-  <td>1200</td>
-  <td class="fw-yes">Yes</td>
-  <td class="fw-part">Partial</td>
-  <td class="fw-no">No</td>
-  <td class="fw-yes">Yes</td>
-  <td class="fw-no">No</td>
-  <td class="fw-yes">Yes</td>
-</tr>
-<tr>
-  <td>2100</td>
+  <td>2101<br />2100</td>
   <td>1200</td>
   <td class="fw-yes">Yes</td>
   <td class="fw-part">Partial</td>
@@ -48,6 +38,16 @@ These are the Aquaero firmware versions currently supported by _pyquaero_:
   <td class="fw-yes">Yes</td>
   <td class="fw-no">No</td>
   <td class="fw-yes">Yes</td>
+</tr>
+<tr>
+  <td>1030<br />1029<br />1028</td>
+  <td>1013</td>
+  <td class="fw-yes">Yes</td>
+  <td class="fw-yes">Yes</td>
+  <td class="fw-no">No</td>
+  <td class="fw-yes">Yes</td>
+  <td class="fw-no">No</td>
+  <td class="fw-no">No</td>
 </tr>
 </tbody>
 </table>

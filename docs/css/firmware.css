@@ -1,6 +1,7 @@
 
-.firmware table {
-  table-layout: fixed;
+.firmware th {
+  width: 12.5%;
+  min-width: 0 !important;
 }
 
 .firmware td {

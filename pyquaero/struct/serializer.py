@@ -41,7 +41,11 @@ class AquaSerializer:
 
 def create_serializer(structure, firmware):
     """Create an AquaSerializer instance for the given structure and firmware version."""
-    if structure == 1013:
+    if structure == 1013 and 1028 <= firmware <= 1030:
+        from .struct1013 import AquaSerializer1013Fw1030
+        return AquaSerializer1013Fw1030()
+
+    if structure == 1013 and firmware > 1030:
         from .struct1013 import AquaSerializer1013
         return AquaSerializer1013()
 

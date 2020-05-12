@@ -36,3 +36,4 @@ _pyquaero_ is open source software. The source code is distributed under the ter
 * [Aqua Computer GmbH & Co. KG](https://www.aquacomputer.de) for donating an Aquaero LT for development purposes.
 * JinTu for [aerotools-ng](https://github.com/JinTu/aerotools-ng). Without his work, pyquaero would not exist.
 * The members of the [Aqua Computer Forum](https://forum.aquacomputer.de) for helping, reverse engineering and feedback.
+* @DrTron for sending dump files and for testing.

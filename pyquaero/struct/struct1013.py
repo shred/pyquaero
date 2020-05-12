@@ -821,3 +821,72 @@ class AquaSerializer1013(AquaSerializer):
             result.append(data[0:22].tobytes().decode('iso-8859-15').rstrip('\x00'))
             data = data[22:]
         return dict(zip(self.string_keys, result))
+
+
+class AquaSerializer1013Fw1030(AquaSerializer1013):
+    """An AquaSerializer for structure version 1013 and firmware up to 1030."""
+
+    status_scheme = Group(scheme={
+        'time':                 Time(at=0x0001),
+        'structure_version':    UnsignedWord(at=0x0005),
+        'serial_major':         UnsignedWord(at=0x0007),
+        'serial_minor':         UnsignedWord(at=0x0009),
+        'firmware_version':     UnsignedWord(at=0x000b),
+        'bootloader_version':   UnsignedWord(at=0x000d),
+        'hardware_version':     UnsignedWord(at=0x000f),
+        'uptime':               Uptime(at=0x0011),
+        'total_uptime':         Uptime(at=0x0015),
+        'temperatures':         Group(scheme={
+            'sensor':               Array(items=16, scheme={
+                 'temp':                Temperature(at=0x0069, step=2),
+                                    }),
+            'virtual':              Array(items=4, scheme={
+                 'temp':                Temperature(at=0x0099, step=2),
+                                    }),
+            'software':             Array(items=8, scheme={
+                 'temp':                Temperature(at=0x0089, step=2),
+                                    }),
+            'fan_vrm':              Array(items=12, scheme={
+                 'temp':                Temperature(at=0x00c1, step=2),
+                                    }),
+            'cpu':                  Array(items=8, scheme={
+                 'temp':                Temperature(at=0x00d9, step=2),
+                                    }),
+            'other':                Array(items=16, scheme={
+                 'temp':                Temperature(at=0x00a1, step=2),
+                                    }),
+                                }),
+        'fans':                 Array(items=12, scheme={
+            'speed':                UnsignedWord(at=0x016b, step=8),
+            'power':                Percent(at=0x016d, step=8),
+            'voltage':              Fraction(divisor=100.0, at=0x016f, step=8),
+            'current':              Fraction(divisor=100.0, at=0x0171, step=8),
+                                }),
+        'flow_meters':          Array(items=14, scheme={
+            'rate':                 Fraction(divisor=10.0, at=0x00fd, step=2),
+                                }),
+        'levels':               Array(items=14, scheme={
+            'level':                Level(at=0x0149, step=2),
+                                }),
+        'aquastream':           Array(items=2, scheme={
+            'status':               Mapped(at=0x01cb, step=8, values={
+                                        1: 'available',
+                                        2: 'alarm',
+                                    }),
+            'mode':                 Mapped(at=0x01cc, step=8, values={
+                                        0: 'automatic',
+                                        1: 'manual',
+                                        2: 'deairation',
+                                        - 1: 'offline',
+                                    }),
+            'frequency':            SignedWord(at=0x01cd, step=8),
+            'voltage':              Fraction(divisor=100.0, at=0x01cf, step=8),
+            'current':              Fraction(divisor=100.0, at=0x01d1, step=8),
+                                }),
+    })
+
+    def read_status(self, backend):
+        return backend.read_status(661, max_age=0.5)
+
+    def unpack_status(self, data):
+        return AquaSerializer1013Fw1030.status_scheme.get(data)
