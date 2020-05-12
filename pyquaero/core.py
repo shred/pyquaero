@@ -50,6 +50,8 @@ class Aquaero:
 
     def set_time(self, time=None):
         """Set the given (or current) time."""
+        if self.firmware < 1036:
+            raise RuntimeError('Firmware 1036 or higher is required for setting the time')
         from datetime import datetime
         if time is None:
             time = datetime.utcnow()
