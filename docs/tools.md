@@ -28,11 +28,11 @@ Example: [http://localhost:9500/status](http://localhost:9500/status) returns th
 
 ## Memory Dump
 
-`pyqmdump` is a tool that is mainly used for reverse engineering. It saves a binary dump of the current status and the settings, and also saves a dump of the flash memory. The dumps are saved to the current working directory.
+`pyqmdump` is a tool that is mainly used for reverse engineering. It saves a binary dump of the current status and the settings, and optionally also saves a dump of the flash memory. The dumps are saved to the current working directory.
 
-This tool ignores the firmware and structure version. Invoking the tool may be harmful to the Aquaero device, because it is unclear how unknown firmware versions react on the USB commands send to it. For security reasons, it won't start unless a special parameter is set on the command line, so you cannot run it by accident.
+This tool ignores the firmware and structure version. Invoking the tool may be harmful to the Aquaero device, because it is unclear how unknown firmware versions react on the USB commands send to it. For security reasons, it won't start unless the `--i-mean-it` parameter is set on the command line, so you cannot run it by accident.
 
 !!! important
-    Only invoke `pyqmdump` if your Aquaero does not currently serve any vital purposes (like actually cooling a computer). It may crash or behave erratic while running this tool. Connected fans and pumps might stpp.
+    Only invoke `pyqmdump` if your Aquaero does not currently serve any vital purposes (like actually cooling a computer). The Aquaero may crash or behave erratic when running this tool. Connected fans and pumps might stop, or rotate too slow.
 
-    We strongly recommend to reset the Aquaero after creating the dump files, by disconnecting it from power for a few seconds.
+    After dumping the flash memory, it is strongly recommended to reset the Aquaero by disconnecting it from power for a few seconds.

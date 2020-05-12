@@ -62,6 +62,7 @@ def dump(unit, flash=True):
         with open(flash_fn, 'wb') as out:
             out.write(dump)
         print('  Success! Dumped %d bytes into %s' % (len(dump), flash_fn))
+        print('  It is recommended to power off your Aquaero device for a few seconds now.')
         print()
 
     print('Dump is completed!')
@@ -70,32 +71,38 @@ def dump(unit, flash=True):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Dumps the memory of an Aquaero device for analytical purposes')
+    parser = argparse.ArgumentParser(description='Dumps the status, settings, and flash memory of an Aquaero device for analytical purposes')
     parser.add_argument('-u', '--unit', default=0, type=int, help='Aquaero unit number')
-    parser.add_argument('-F', '--noflash', action='store_true', help='Do not dump the flash memory')
+    parser.add_argument('--flash', action='store_true', help='Also dump the contents of the flash memory (potentially risky, Aquaero reboot is recommended after that)')
     parser.add_argument('--i-mean-it', dest='imeanit', action='store_true', help='Confirm that you know what you are doing')
     args = parser.parse_args()
 
     if not args.imeanit:
+        parser.print_help()
+        print()
         print('''pyqmdump is meant for reverse engineering purposes only.
+
+It connects to your Aquaero device, irregarding of the firmware version.
+This is potentially risky, as it is not known how the Aquaero device is
+reacting on the commands sent by this tool.
 
 WARNING:
  - Your Aquaero device may crash or behave erratic. Fans and pumps might
    stop at any time. Do not use this tool while your Aquaero device is
    in use (e.g. actually cooling a computer).
- - After use, it is recommended to reset your Aquaero device by
-   disconnecting it from power.
+ - After use, it is recommended to restart your Aquaero device by
+   disconnecting it from power for a few seconds.
  - Use it at your own risk.
 
 If you really know what you are doing, set the --i-mean-it option.''')
         sys.exit(1)
 
     try:
-        dump(args.unit, not args.noflash)
+        dump(args.unit, args.flash)
     except KeyboardInterrupt:
         print()
         print()
-        print('Dump was aborted! To avoid malfunction, reset the Aquaero device by disconnecting it.')
+        print('Dump was aborted! To avoid malfunction, restart your Aquaero device.')
     except usb.USBError as err:
         print()
         print()
