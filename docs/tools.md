@@ -2,6 +2,24 @@
 
 _pyquaero_ comes with two Aquaero related tools.
 
+## Reading the Status
+
+`pyqread` is a tool that reads the status, settings, or customizable strings from an Aquaero device. The output is printed to `stdout`.
+
+`pyqread --help` shows the usage. Without arguments, it prints the current status as pretty-printed JSON.
+
+These `--type` options are available:
+
+- `status` - Print the current status of the Aquaero device (e.g. temperatures and fan speeds). This is the default.
+- `settings` - Print the current settings of the Aquaero device.
+- `strings` - Print the current customizable strings of the Aquaero device.
+
+These `--format` options are available:
+
+- `json` - The output is formatted as pretty-printed, human readable JSON. This is the default.
+- `compact` - The output is formatted as compact, single-line JSON. Useful for post-processing the output with other tools.
+- `flat` - The output is a flat set of key-value pairs, separated by `=`. Useful for post-processing with line-based tools (like grep). You can safely split key and values at the first `=` of the line, as the key will never contain that character. Note that, unlike in JSON, all `null` values are skipped in this format.
+
 ## Setting the Clock
 
 `pyqsettime` is a simple example tool that sets the real time clock of your Aquaero to your system's time.

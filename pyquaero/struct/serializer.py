@@ -71,6 +71,6 @@ def from_json(text):
     """Convert JSON to an unserialized dictionary."""
     return json.loads(text)
 
-def to_json(result):
+def to_json(result, indent=None):
     """Convert an unserialized dictionary to JSON."""
-    return json.dumps(result, cls=AquaJSONEncoder, sort_keys=True)
+    return json.dumps(result, indent=indent, cls=AquaJSONEncoder, sort_keys=True)

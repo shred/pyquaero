@@ -68,6 +68,7 @@ setup(
             'pyqd=pyqtools.pyqd:main',
             'pyqsettime=pyqtools.pyqsettime:main',
             'pyqmdump=pyqtools.pyqmdump:main',
+            'pyqread=pyqtools.pyqread:main',
         ],
     },
 )
