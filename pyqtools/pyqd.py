@@ -30,7 +30,7 @@ def main():
     parser.add_argument('-u', '--unit', default=0, type=int, help='Aquaero unit number')
     parser.add_argument('-p', '--port', default=9500, type=int, help='HTTP port the server is listening at')
     parser.add_argument('-H', '--host', default='', help='HTTP host the server is bound to')
-    parser.add_argument('-T', '--notime', default=False, type=bool, help='Disable frequent Aquaero clock updates')
+    parser.add_argument('-T', '--notime', action='store_true', help='Disable frequent Aquaero clock updates')
     args = parser.parse_args()
 
     httpd = PyquaeroServer((args.host, args.port), args.unit, updatetime=not args.notime)

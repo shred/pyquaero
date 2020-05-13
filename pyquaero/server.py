@@ -130,14 +130,15 @@ class PyquaeroServer(TCPServer):
     """Connect to a Aquaero and provide a HTTP service for controlling it."""
 
     def __init__(self, address, unit=0, updatetime=True):
-        TCPServer.__init__(self, address, PyquaeroHandler)
+        self.time_updater = None
         self.aquaero = Aquaero(unit)
+        TCPServer.__init__(self, address, PyquaeroHandler)
         if updatetime:
             self.time_updater = PyquaeroTimeUpdater(self.aquaero)
             self.time_updater.start()
 
     def server_close(self):
-        if self.time_updater:
+        if self.time_updater is not None:
             self.time_updater.stop()
         TCPServer.server_close(self)
         self.aquaero.close()
