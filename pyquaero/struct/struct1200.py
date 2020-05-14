@@ -480,3 +480,10 @@ class AquaSerializer1200(AquaSerializer):
             result.append(data[0:24].tobytes().decode('iso-8859-15').rstrip('\x00'))
             data = data[24:]
         return dict(zip(self.string_keys, result))
+
+
+class AquaSerializer1200Fw2007(AquaSerializer1200):
+    """An AquaSerializer for structure version 1200 and firmwares starting 2007."""
+
+    def read_status(self, backend):
+        return backend.read_status(871, max_age=0.5)

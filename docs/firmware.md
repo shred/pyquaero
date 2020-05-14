@@ -1,5 +1,10 @@
 # Firmware
 
+!!! important
+    After a firmware update, some features may not be supported by _pyquaero_ any more (see the table below). If you require a feature, make sure it is still available after the firmware has been updated, _before_ performing the update.
+
+    It is **not** possible to downgrade to an older firmware version again, so do not update if everything is working fine for you.
+
 ## Supported Firmware Versions
 
 These are the Aquaero firmware versions currently supported by _pyquaero_:
@@ -21,6 +26,16 @@ These are the Aquaero firmware versions currently supported by _pyquaero_:
 <tbody>
 <tr>
   <td>2101<br />2100</td>
+  <td>1200</td>
+  <td class="fw-yes">Yes</td>
+  <td class="fw-part">Partial</td>
+  <td class="fw-no">No</td>
+  <td class="fw-yes">Yes</td>
+  <td class="fw-no">No</td>
+  <td class="fw-yes">Yes</td>
+</tr>
+<tr>
+  <td>2009</td>
   <td>1200</td>
   <td class="fw-yes">Yes</td>
   <td class="fw-part">Partial</td>
@@ -57,14 +72,11 @@ These are the Aquaero firmware versions currently supported by _pyquaero_:
 <span class="fw-part">Partial</span>: Feature is essentially supported, but some important parts are still missing. <br>
 <span class="fw-no">No</span>: Feature is not supported at all.
 
-!!! important
-    After a firmware update, some features may not be available any more (see the table above). If you require a special feature, make sure it is still available after the firmware has been updated, _before_ performing the update. It is **not** possible to downgrade to an older firmware version again, so do not update if in doubt.
-
 ## Other Firmware Versions
 
 Your firmware version is not listed above?
 
-If the structure version still matches, other firmware versions may be supported as well, but are then untested.
+If the structure version still matches, other firmware versions may be supported as well, but are then untested. If you can spare some minutes, please [file an issue](https://github.com/shred/pyquaero/issues) so we can add your firmware version to the list.
 
 If the structure version is unknown, _pyquaero_ refuses to connect to the Aquaero device. More or less extensive changes to the source code are then needed to make this firmware version work.
 

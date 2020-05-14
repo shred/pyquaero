@@ -28,6 +28,8 @@ These `--format` options are available:
 
 Note that `pyqsettime` cannot be used while `pydq` is running on the Aquaero device. However, `pydq` already takes care of setting the real time clock and keeping it up to date.
 
+Firmware 1036 or higher is required for setting the Aquaero clock.
+
 ## Pyquaero Server
 
 Pyquaero provides a HTTP web service that communicates via simple commands and JSON. It is called `pyqd`.
@@ -43,6 +45,8 @@ These end points are currently implemented:
 - `strings`- Return the current customizable strings of the Aquaero device as JSON.
 
 Example: [http://localhost:9500/status](http://localhost:9500/status) returns the current state of your Aquaero as JSON data.
+
+Firmware 1036 or higher is required for setting the Aquaero clock. If you have an older firmware, use the `--notime` option to keep the clock unchanged.
 
 ## Memory Dump
 

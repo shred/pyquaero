@@ -49,6 +49,10 @@ def create_serializer(structure, firmware):
         from .struct1013 import AquaSerializer1013
         return AquaSerializer1013()
 
+    if structure == 1200 and 2007 <= firmware <= 2099:
+        from .struct1200 import AquaSerializer1200Fw2007
+        return AquaSerializer1200Fw2007()
+
     if structure == 1200:
         from .struct1200 import AquaSerializer1200
         return AquaSerializer1200()
