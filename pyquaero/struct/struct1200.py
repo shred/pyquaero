@@ -127,8 +127,8 @@ class AquaSerializer1200(AquaSerializer):
             'performance':          Fraction(divisor=100.0, at=0x016f, step=12),
             'torque':               SignedWord(at=0x0171, step=12),
                                 }),
-        'flow_meters':          Array(items=12, scheme={
-            'rate':                 Fraction(divisor=10.0, at=0x00e5, step=2),
+        'flow_meters':          Array(items=14, scheme={
+            'rate':                 Fraction(divisor=10.0, at=0x00f9, step=2, optional=True),
                                 }),
         'levels':               Array(items=4, scheme={
             'level':                Level(at=0x0145, step=2),

@@ -134,13 +134,13 @@ class Temperature(SignedWord):
 
 class Fraction(SignedWord):
     """A fraction with the given divisor."""
-    def __init__(self, at, divisor=1.0, step=0):
-        SignedWord.__init__(self, at, step)
+    def __init__(self, at, divisor=1.0, step=0, optional=False):
+        SignedWord.__init__(self, at, step, optional=optional)
         self.divisor = divisor
 
     def fetch(self, data, pos):
         val = SignedWord.fetch(self, data, pos)
-        return val / self.divisor
+        return val / self.divisor if val is not None else None
 
 class CurveTemperatures(AquaType):
     """Unpack temperatures of a curve to an array."""
