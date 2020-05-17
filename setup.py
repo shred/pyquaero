@@ -26,8 +26,8 @@ def readme():
 
 setup(
     name='pyquaero',
-    version='1.2.0',
-    description='Library and server for Aquaero cooler controllers',
+    version='1.3.0',
+    description='Library, tools and server for Aquaero cooler controllers',
     long_description=readme(),
     long_description_content_type='text/markdown',
     url='https://github.com/shred/pyquaero',
@@ -46,7 +46,7 @@ setup(
     },
 
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Intended Audience :: System Administrators',
         'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
