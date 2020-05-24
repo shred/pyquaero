@@ -142,6 +142,16 @@ class Fraction(SignedWord):
         val = SignedWord.fetch(self, data, pos)
         return val / self.divisor if val is not None else None
 
+class UnsignedFraction(SignedWord):
+    """An unsigned fraction with the given divisor."""
+    def __init__(self, at, divisor=1.0, step=0, optional=False):
+        UnsignedWord.__init__(self, at, step, optional=optional)
+        self.divisor = divisor
+
+    def fetch(self, data, pos):
+        val = UnsignedWord.fetch(self, data, pos)
+        return val / self.divisor if val is not None else None
+
 class CurveTemperatures(AquaType):
     """Unpack temperatures of a curve to an array."""
     undefined = 0x7fff

@@ -137,7 +137,7 @@ class AquaSerializer1200(AquaSerializer):
             'pressure':             SignedWord(at=0x015d, step=2, optional=True),
                                 }),
         'powerconsumption':     Array(items=4, scheme={
-            'flow':                 Fraction(divisor=10.0, at=0x0115, step=12),
+            'flow':                 UnsignedFraction(divisor=10.0, at=0x0115, step=12, optional=True),
             'sensor1':              Temperature(at=0x0117, step=12),
             'sensor2':              Temperature(at=0x0119, step=12),
             'deltaT':               Fraction(divisor=100.0, at=0x011b, step=12),
@@ -158,8 +158,8 @@ class AquaSerializer1200(AquaSerializer):
                                         - 1: 'offline',
                                     }),
             'speed':                UnsignedWord(at=0x01f9, step=8, optional=True),
-            'voltage':              Fraction(divisor=100.0, at=0x01fb, step=8, optional=True),
-            'current':              Fraction(divisor=1000.0, at=0x01fd, step=8, optional=True),
+            'voltage':              UnsignedFraction(divisor=100.0, at=0x01fb, step=8, optional=True),
+            'current':              UnsignedFraction(divisor=1000.0, at=0x01fd, step=8, optional=True),
                                 }),
     })
 

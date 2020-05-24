@@ -402,9 +402,9 @@ class AquaSerializer1013(AquaSerializer):
                                         2: 'deairation',
                                         - 1: 'offline',
                                     }),
-            'frequency':            SignedWord(at=0x01fd, step=8, optional=True),
-            'voltage':              Fraction(divisor=100.0, at=0x01ff, step=8, optional=True),
-            'current':              Fraction(divisor=1000.0, at=0x0201, step=8, optional=True),
+            'frequency':            UnsignedWord(at=0x01fd, step=8, optional=True),
+            'voltage':              UnsignedFraction(divisor=100.0, at=0x01ff, step=8, optional=True),
+            'current':              UnsignedFraction(divisor=1000.0, at=0x0201, step=8, optional=True),
                                 }),
     })
 
@@ -879,9 +879,9 @@ class AquaSerializer1013Fw1030(AquaSerializer1013):
                                         2: 'deairation',
                                         - 1: 'offline',
                                     }),
-            'frequency':            SignedWord(at=0x01cd, step=8, optional=True),
-            'voltage':              Fraction(divisor=100.0, at=0x01cf, step=8, optional=True),
-            'current':              Fraction(divisor=1000.0, at=0x01d1, step=8, optional=True),
+            'frequency':            UnsignedWord(at=0x01cd, step=8, optional=True),
+            'voltage':              UnsignedFraction(divisor=100.0, at=0x01cf, step=8, optional=True),
+            'current':              UnsignedFraction(divisor=1000.0, at=0x01d1, step=8, optional=True),
                                 }),
     })
 
