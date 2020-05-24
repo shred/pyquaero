@@ -383,7 +383,7 @@ class AquaSerializer1013(AquaSerializer):
             'speed':                UnsignedWord(at=0x016b, step=12),
             'power':                Percent(at=0x016d, step=12),
             'voltage':              Fraction(divisor=100.0, at=0x016f, step=12),
-            'current':              Fraction(divisor=100.0, at=0x0171, step=12),
+            'current':              Fraction(divisor=1000.0, at=0x0171, step=12),
                                 }),
         'flow_meters':          Array(items=14, scheme={
             'rate':                 Fraction(divisor=10.0, at=0x00fd, step=2),
@@ -402,9 +402,9 @@ class AquaSerializer1013(AquaSerializer):
                                         2: 'deairation',
                                         - 1: 'offline',
                                     }),
-            'frequency':            SignedWord(at=0x01fd, step=8),
-            'voltage':              Fraction(divisor=100.0, at=0x01ff, step=8),
-            'current':              Fraction(divisor=100.0, at=0x0201, step=8),
+            'frequency':            SignedWord(at=0x01fd, step=8, optional=True),
+            'voltage':              Fraction(divisor=100.0, at=0x01ff, step=8, optional=True),
+            'current':              Fraction(divisor=1000.0, at=0x0201, step=8, optional=True),
                                 }),
     })
 
@@ -860,7 +860,7 @@ class AquaSerializer1013Fw1030(AquaSerializer1013):
             'speed':                UnsignedWord(at=0x016b, step=8),
             'power':                Percent(at=0x016d, step=8),
             'voltage':              Fraction(divisor=100.0, at=0x016f, step=8),
-            'current':              Fraction(divisor=100.0, at=0x0171, step=8),
+            'current':              Fraction(divisor=1000.0, at=0x0171, step=8),
                                 }),
         'flow_meters':          Array(items=14, scheme={
             'rate':                 Fraction(divisor=10.0, at=0x00fd, step=2),
@@ -879,9 +879,9 @@ class AquaSerializer1013Fw1030(AquaSerializer1013):
                                         2: 'deairation',
                                         - 1: 'offline',
                                     }),
-            'frequency':            SignedWord(at=0x01cd, step=8),
-            'voltage':              Fraction(divisor=100.0, at=0x01cf, step=8),
-            'current':              Fraction(divisor=100.0, at=0x01d1, step=8),
+            'frequency':            SignedWord(at=0x01cd, step=8, optional=True),
+            'voltage':              Fraction(divisor=100.0, at=0x01cf, step=8, optional=True),
+            'current':              Fraction(divisor=1000.0, at=0x01d1, step=8, optional=True),
                                 }),
     })
 

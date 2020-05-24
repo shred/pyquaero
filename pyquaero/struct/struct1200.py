@@ -123,7 +123,7 @@ class AquaSerializer1200(AquaSerializer):
             'speed':                UnsignedWord(at=0x0167, step=12, optional=True),
             'power':                Percent(at=0x0169, step=12),
             'voltage':              Fraction(divisor=100.0, at=0x016b, step=12),
-            'current':              Fraction(divisor=100.0, at=0x016d, step=12),
+            'current':              Fraction(divisor=1000.0, at=0x016d, step=12),
             'performance':          Fraction(divisor=100.0, at=0x016f, step=12),
             'torque':               SignedWord(at=0x0171, step=12),
                                 }),
@@ -158,8 +158,8 @@ class AquaSerializer1200(AquaSerializer):
                                         - 1: 'offline',
                                     }),
             'speed':                UnsignedWord(at=0x01f9, step=8, optional=True),
-            'voltage':              Fraction(divisor=100.0, at=0x01fb, step=8),
-            'current':              Fraction(divisor=100.0, at=0x01fd, step=8),
+            'voltage':              Fraction(divisor=100.0, at=0x01fb, step=8, optional=True),
+            'current':              Fraction(divisor=1000.0, at=0x01fd, step=8, optional=True),
                                 }),
     })
 
