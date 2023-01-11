@@ -141,7 +141,7 @@ class AquaSerializer1200(AquaSerializer):
             'sensor1':              Temperature(at=0x0117, step=12),
             'sensor2':              Temperature(at=0x0119, step=12),
             'deltaT':               Fraction(divisor=100.0, at=0x011b, step=12),
-            'power':                Fraction(divisor=100.0, at=0x011d, step=12),
+            'power':                UnsignedWord(at=0x011d, step=12),
             'resistance':           SignedWord(at=0x011f, step=12, optional=True),
                                 }),
         'aquastream':           Array(items=6, scheme={
