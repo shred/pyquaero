@@ -18,7 +18,7 @@ _pyquaero_ is a community open source project. It is not endorsed by or affiliat
 
 ## Supported Firmware Versions
 
-Before you install _pyquaero_, [check here](firmware) if your Aquaero firmware is supported.
+Before you install _pyquaero_, [check here](firmware.md) if your Aquaero firmware is supported.
 
 ## Installation
 
