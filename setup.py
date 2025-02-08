@@ -2,7 +2,7 @@
 # pyquaero - a Python library for Aquaero fan controllers
 #
 # Copyright (C) 2019 Richard "Shred" Körber
-#   https://github.com/shred/pyquaero
+#   https://codeberg.org/shred/pyquaero
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as
@@ -30,7 +30,7 @@ setup(
     description='Library, tools and server for Aquaero cooler controllers',
     long_description=readme(),
     long_description_content_type='text/markdown',
-    url='https://github.com/shred/pyquaero',
+    url='https://codeberg.org/shred/pyquaero',
     keywords='library server aquaero cooling usb',
     license='GPLv3+',
 
@@ -41,8 +41,8 @@ setup(
 
     project_urls={
         'Documentation': 'https://shredzone.org/docs/pyquaero/index.html',
-        'Source': 'https://github.com/shred/pyquaero',
-        'Tracker': 'https://github.com/shred/pyquaero/issues',
+        'Source': 'https://codeberg.org/shred/pyquaero',
+        'Tracker': 'https://codeberg.org/shred/pyquaero/issues',
     },
 
     classifiers=[

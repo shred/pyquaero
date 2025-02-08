@@ -2,7 +2,7 @@
 # pyquaero - a Python library for Aquaero fan controllers
 #
 # Copyright (C) 2014 Richard "Shred" Körber
-#   https://github.com/shred/pyquaero
+#   https://codeberg.org/shred/pyquaero
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as

@@ -46,4 +46,4 @@ The `$user` is now allowed to access the Aquaero USB device.
 
 ## Open Source
 
-_pyquaero_ is open source software. The source code is available [at GitHub](https://github.com/shred/pyquaero), and is distributed under the terms of [GNU General Public License (GPLv3)](https://www.gnu.org/licenses/gpl-3.0.en.html#content).
+_pyquaero_ is open source software. The source code is available [at Codeberg](https://codeberg.org/shred/pyquaero), and is distributed under the terms of [GNU General Public License (GPLv3)](https://www.gnu.org/licenses/gpl-3.0.en.html#content).

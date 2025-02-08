@@ -24,8 +24,8 @@ See the [documentation](https://shredzone.org/docs/pyquaero/index.html) for how 
 
 ## Contribute
 
-* Fork the [Source code at GitHub](https://github.com/shred/pyquaero). Feel free to send pull requests.
-* Found a bug? [File a bug report!](https://github.com/shred/pyquaero/issues)
+* Fork the [Source code at Codeberg](https://codeberg.org/shred/pyquaero). Feel free to send pull requests.
+* Found a bug? [File a bug report!](https://codeberg.org/shred/pyquaero/issues)
 
 ## License
 

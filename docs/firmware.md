@@ -136,7 +136,7 @@ These are the Aquaero firmware versions currently supported by _pyquaero_:
 
 Your firmware version is not listed above?
 
-If the structure version still matches, other firmware versions may be supported as well, but are then untested. If you can spare some minutes, please [file an issue](https://github.com/shred/pyquaero/issues) so we can add your firmware version to the list.
+If the structure version still matches, other firmware versions may be supported as well, but are then untested. If you can spare some minutes, please [file an issue](https://codeberg.org/shred/pyquaero/issues) so we can add your firmware version to the list.
 
 If the structure version is unknown, _pyquaero_ refuses to connect to the Aquaero device. More or less extensive changes to the source code are then needed to make this firmware version work.
 
